@@ -1,0 +1,14 @@
+// Note: fonts folder needs to match the font name decalred in variables
+@each $key,$val in $fonts{
+  @font-face {
+    src: url("../../assets/fonts/#{$val}/#{$val}-Bold.woff2");
+    font-family: $val;
+    font-weight: $fw-bold;
+    font-display: swap; }
+
+  @font-face {
+    src: url("../../assets/fonts/#{$val}/#{$val}-Book.woff2");
+    font-family: $val;
+    font-weight: $fw-book;
+    font-display: swap; }
+}

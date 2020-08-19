@@ -1,0 +1,279 @@
+/* --------------------
+    HEADLINES PLACEHOLDERS
+----------------- */
+%headline-1-fs {
+  font-size: $dsk-headline--1;
+
+  @include respond(lg) {
+    font-size: $ipro-headline--1;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-headline--1;
+  }
+}
+
+%headline-2-fs {
+  font-size: $dsk-headline--2;
+
+  @include respond(lg) {
+    font-size: $ipro-headline--2;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-headline--2;
+  }
+}
+
+%headline-3-fs {
+  font-size: $dsk-headline--3;
+
+  @include respond(lg) {
+    font-size: $ipro-headline--3;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-headline--3;
+  }
+}
+
+%headline-4-fs {
+  font-size: $dsk-headline--4;
+
+  @include respond(lg) {
+    font-size: $ipro-headline--4;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-headline--4;
+  }
+}
+
+.headline {
+  font-weight: $fw-regular;
+  font-family: map-get($fonts, "Secondary");
+
+  &--1 {
+    @extend %headline-1-fs;
+
+    font-weight: $fw-bold;
+  }
+
+  &--2 {
+    @extend %headline-2-fs;
+
+    font-weight: $fw-bold;
+  }
+
+  &--3 {
+    @extend %headline-3-fs;
+
+    color: $color-2;
+
+    &--bold {
+      font-weight: $fw-bold;
+    }
+  }
+
+  &--4 {
+    @extend %headline-4-fs;
+
+    letter-spacing: 0.7px;
+    color: $color-5;
+  }
+}
+
+/* --------------------
+    ARTICLE HEADLINE PLACEHOLDERS
+----------------- */
+%article-headline-1-fs {
+  font-size: $dsk-article-headline-1;
+
+  @include respond(lg) {
+    font-size: $ipro-article-headline-1;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-article-headline-1;
+  }
+}
+
+%article-headline-2-fs {
+  font-size: $dsk-article-headline-2;
+
+  @include respond(lg) {
+    font-size: $ipro-article-headline-2;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-article-headline-2;
+  }
+}
+
+%article-headline-3-fs {
+  font-size: $dsk-article-headline-3;
+
+  @include respond(lg) {
+    font-size: $ipro-article-headline-3;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-article-headline-3;
+  }
+}
+
+%article-headline-4-fs {
+  font-size: $dsk-article-headline-4;
+
+  @include respond(lg) {
+    font-size: $ipro-article-headline-4;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-article-headline-4;
+  }
+}
+
+%article-headline-6-fs {
+  font-size: $dsk-article-headline-6;
+
+  @include respond(lg) {
+    font-size: $ipro-article-headline-6;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-article-headline-6;
+  }
+}
+
+/* --------------------
+    .article-headline
+----------------- */
+.article-headline {
+  &--1 {
+    @extend %article-headline-1-fs;
+
+    font-family: map-get($fonts, "Primary");
+    font-weight: $fw-extra-bold;
+    letter-spacing: 0.92px;
+    color: $color-3;
+  }
+
+  &--2 {
+    @extend %article-headline-2-fs;
+
+    font-family: map-get($fonts, "Secondary");
+    font-weight: $fw-regular;
+    letter-spacing: 0.92px;
+    color: $color-5;
+  }
+
+  &--3 {
+    @extend %article-headline-3-fs;
+
+    font-family: map-get($fonts, "Secondary");
+    font-weight: $fw-extra-bold;
+    letter-spacing: 2.3px;
+    color: $color-1;
+  }
+
+  &--4 {
+    @extend %article-headline-4-fs;
+
+    font-family: map-get($fonts, "Secondary");
+    font-weight: $fw-extra-bold;
+    letter-spacing: 0.56px;
+    color: $color-1;
+  }
+
+  &--5 {
+    @extend %article-headline-1-fs;
+
+    font-family: map-get($fonts, "Secondary");
+    font-weight: $fw-regular;
+    color: $color-2;
+  }
+
+  &--6 {
+    @extend %article-headline-6-fs;
+
+    font-family: map-get($fonts, "Secondary");
+    font-weight: $fw-regular;
+    letter-spacing: 0.72px;
+    color: $color-4;
+  }
+}
+
+/* --------------------
+    PARAGRAPHS PLACEHOLDERS
+----------------- */
+%para-1-fs {
+  font-size: $dsk-article-paragraph-1;
+
+  @include respond(lg) {
+    font-size: $ipro-article-paragraph-1;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-article-paragraph-1;
+  }
+}
+
+%para-2-fs {
+  font-size: $dsk-article-paragraph-2;
+
+  @include respond(lg) {
+    font-size: $ipro-article-paragraph-2;
+  }
+
+  @include respond(sm) {
+    font-size: $mob-article-paragraph-2;
+  }
+}
+
+/* --------------------
+    para
+----------------- */
+
+.para {
+  font-family: map-get($fonts, "Secondary");
+  font-weight: $fw-regular;
+  color: $text-color-dark;
+
+  &--1 {
+    letter-spacing: 0.63px;
+
+    @extend %para-1-fs;
+  }
+
+  &--2 {
+    @extend %para-2-fs;
+
+    font-weight: $fw-extra-bold;
+    letter-spacing: 2.2px;
+  }
+}
+
+/* --------------------
+        disclaimer
+----------------- */
+.disclaimer {
+  font-size: var(--disclaimer-text);
+
+  &-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  // disclaimer__link
+  &__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+//END disclaimer
