@@ -7,49 +7,227 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     </style>
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
+<style>
+  .au__right-img {
+    background-image: url("assets/img/about-us/right.png");
+  }
+
+  .au__left-img {
+    background-image: url("assets/img/about-us/love-comp.png");
+  }
+
+  @media only screen and (max-width: 600px) {
+    .au__right-img {
+      background-image: url("assets/img/about-us/right_mob.png");
+      background-size: contain;
+    }
+
+    .au__left-img {
+      background-image: unset;
+    }
+  }
+</style>
+
 <body>
-    <section class="about-us">
-        <div class="about-us__wrapper">
-            <!-- Article 1 -->
-            <article class="article article--1">
-                <h5>Lorem, ipsum.</h5>
-                <h3>Lorem, ipsum.</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere earum voluptatem nobis, veniam quas
-                    possimus incidunt repellat rem. Maxime veniam excepturi esse dolore rem quis libero aperiam nobis
-                    obcaecati. Quidem.</p>
-            </article><!-- /.article article--1-->
-            <!-- Image right -->
-            <figure class="right-img">
-              <article>
-                <h6 class="para para--2">Lorem, ipsum.</h6>
-                <p class="para para--1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-              </article>
-            </figure>
-            <!-- Image left -->
-            <figure class="left-img"></figure>
-            <!-- Article 2 -->
-            <article class="article article--2">
-                <h5>Lorem, ipsum.</h5>
-                <h3>Lorem, ipsum.</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere earum voluptatem nobis, veniam quas
-                    possimus incidunt repellat rem. Maxime veniam excepturi esse dolore rem quis libero aperiam nobis
-                    obcaecati. Quidem.</p>
-                <div class="images">
-                  <figure>
-                    <img src="/assets/img/about-us/UM-Full-Logo-300x121.png" alt="">
-                  </figure>
-                  <figure>
-                    <img src="/assets/img/about-us/hackeru-logo.png" alt="">
+
+  <section class="au">
+    <div class="au__wrapper">
+        <!-- Article 1 -->
+        <article class="au__article au__article--1">
+          <h5 class="au__article-ah--3">Lorem, ipsum.</h5>
+          <h3 class="au__article-ah--1">Lorem, ipsum dolor.</h3>
+          <p class="au__article-p--1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime minus assumenda cumque, modi consectetur quod saepe voluptate consequatur minima quia, numquam quo nobis pariatur laborum, ipsa ducimus qui asperiores dolore!</p>
+        </article><!-- /.article article--1-->
+        <!-- Image right -->
+        <figure class="au__right-img">
+          <article class="img-article">
+            <h6 class="img-article__title para para--2">Lorem, ipsum.</h6>
+            <p class="img-article__para para para--1">Lorem, ipsum dolor.</p>
+          </article>
+        </figure>
+        <!-- Image left -->
+        <figure class="au__left-img"></figure>
+        <!-- Article 2 -->
+        <article class="au__article au__article--2">
+            <h3 class="au__article-ah--1">Lorem, ipsum.</h3>
+            <h5 class="au__article-ah--3">Lorem, ipsum dolor.</h5>
+            <p class="au__article-p--1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, deserunt.</p>
+            <div class="images">
+              <figure>
+                <img src="assets/img/about-us/UM-Full-Logo-300x121.png" alt="University Logo">
+              </figure>
+              <figure>
+                <img src="assets/img/about-us/hackeru-logo.png" alt="Hackeru Logo">
+              </figure>
+            </div>
+        </article><!-- /.article article--2-->
+    </div><!-- /au__wrapper -->
+  </section><!-- /au-->
+    <!--
+    #=================EXPERIENCE===================#
+    -->
+    <section class="experience">
+      <div class="experience__wrapper container">
+        <article class="section-article">
+          <p class="para para--2"><?= $experience['headline_1']?></p>
+          <h3 class="article-headline article-headline--1"><?= $experience['headline_2']?></h3>
+          <p class="para para--1"><?= $experience['paragraph']?></p>
+        </article>
+
+        <div class="experience__wrapper-icons">
+            <!-- <?= $key ?> -->
+            <div class="experience__wrapper-icons_wrapper">
+                <img src="assets/img/about-us/hackeru-logo.png" class="displayed icon1" alt="University Logo">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, molestiae.</p>
+            </div>
+            <!-- <?= $key ?> -->
+            <div class="experience__wrapper-icons_wrapper">
+                <img src="assets/img/about-us/hackeru-logo.png" class="displayed icon1" alt="University Logo">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, molestiae.</p>
+            </div>
+            <!-- <?= $key ?> -->
+            <div class="experience__wrapper-icons_wrapper">
+                <img src="assets/img/about-us/hackeru-logo.png" class="displayed icon1" alt="University Logo">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, molestiae.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+    #=================CAMPUS===================#
+    -->
+    <section class="campus">
+      <div class="campus__container container">
+
+        <!-- https://codepen.io/FrankieDoodie/pen/gdabrR -->
+        <article class="section-article">
+          <p class="para para--2">Lorem, ipsum.</p>
+          <h3 class="article-headline article-headline--1">Lorem, ipsum dolor.</h3>
+        </article>
+
+        <div class="swiper-main">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-image="test-1" data-id="1">
+                  <figure class="image image--1}">
+                    <img src="https://via.placeholder.com/1000/FFFF00/000000" alt="Trulli" class="img" >
                   </figure>
                 </div>
-            </article><!-- /.article article--2-->
-        </div><!-- /about-us__wrapper -->
-    </section><!-- /about-us-->
+                <div class="swiper-slide" data-image="test-1" data-id="2">
+                  <figure class="image image--2}">
+                    <img src="https://via.placeholder.com/1000/FFFF00/000000" alt="Trulli" class="img" >
+                  </figure>
+                </div>
+                <div class="swiper-slide" data-image="test-1" data-id="3">
+                  <figure class="image image--3}">
+                    <img src="https://via.placeholder.com/1000/FFFF00/000000" alt="Trulli" class="img" >
+                  </figure>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows  swiper-button-white -->
+            <div class="swiper-button-next">
+                <svg class="arrow">
+                    <use xlink:href="@asset('images/steph-v2/left_arrow.svg')"></use>
+                </svg>
+            </div>
+            <div class="swiper-button-prev">
+                <svg class="arrow">
+                    <use xlink:href="@asset('images/steph-v2/right_arrow.svg')"></use>
+                </svg>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.cotainer -->
+    </section><!-- /.campus -->
+    <section class="slide-popup"></section>
+<script>
+      // JavaScript to be fired on the faq page
+      // JavaScript to be fired on the about us page
+      new Swiper('.swiper-container', {
+        centeredSlides: true,
+        loop: true,
+        spaceBetween:15,
+
+        breakpoints:{
+          300:{
+            spaceBetween:0,
+            slidesPerView: 1,
+          },
+          700: {
+            spaceBetween:15,
+            slidesPerView: 2,
+          },
+          1024: {
+            spaceBetween:15,
+            slidesPerView: 3,
+          },
+        },
+
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+      console.log(Array.from(document.querySelectorAll('.swiper-slide')))
+      const images = [];
+      let currentIndex = 0;
+
+      Array.from(document.querySelectorAll('.swiper-slide')).forEach(slide => {
+        images.push(slide.dataset.image);
+
+        slide.addEventListener('click',()=>{
+
+          console.log(slide.dataset.image)
+          $('.slide-popup').fadeIn(300);
+          $('.slide-popup').html(`
+            <span class="slide-popup__close">x</span>
+            <img src="${slide.dataset.image}" class="slide-popup__image" alt="">
+            <button class="slide-popup__prev">&leftarrow;</button>
+            <button class="slide-popup__next">&rightarrow;</button>
+          `);
+
+          $('.slide-popup__close').click(function(){
+            $('.slide-popup').fadeOut(300)
+          });
+
+          $('.slide-popup__next').click(function(){
+            currentIndex++;
+            if(currentIndex === images.length-1){
+              currentIndex=0;
+            }
+            $('.slide-popup__image').attr('src', images[currentIndex])
+          });
+
+          $('.slide-popup__prev').click(function(){
+            currentIndex--;
+            if(currentIndex <= 0){
+              currentIndex=images.length-1;
+            }
+            $('.slide-popup__image').attr('src', images[currentIndex])
+          });
+
+        });
+      });
+    </script>
 </body>
 
 </html>

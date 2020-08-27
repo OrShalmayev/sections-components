@@ -4,11 +4,15 @@
 %headline-1-fs {
   font-size: $dsk-headline--1;
 
+  @include respond(xl) {
+    font-size: $lap-headline--1;
+  }
+
   @include respond(lg) {
     font-size: $ipro-headline--1;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-headline--1;
   }
 }
@@ -16,11 +20,15 @@
 %headline-2-fs {
   font-size: $dsk-headline--2;
 
+  @include respond(xl) {
+    font-size: $lap-headline--2;
+  }
+
   @include respond(lg) {
     font-size: $ipro-headline--2;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-headline--2;
   }
 }
@@ -32,26 +40,41 @@
     font-size: $ipro-headline--3;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-headline--3;
   }
 }
 
 %headline-4-fs {
-  font-size: $dsk-headline--4;
+  font-size: $ipro-article-headline-1;
 
   @include respond(lg) {
-    font-size: $ipro-headline--4;
+    font-size: $ipro-article-headline-1;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-headline--4;
   }
 }
 
+%headline-4-fs-custom {
+  font-size: $ipro-article-headline-1;
+
+  @include respond (xl) {
+    font-size: 3.2rem;
+  }
+
+  @include respond (lg) {
+    font-size: 2.5rem;
+  }
+
+  @include respond (xs) {
+    font-size: 2.5rem;
+  }
+}
+
 .headline {
-  font-weight: $fw-regular;
-  font-family: map-get($fonts, "Secondary");
+  color: $text-color-dark;
 
   &--1 {
     @extend %headline-1-fs;
@@ -68,18 +91,17 @@
   &--3 {
     @extend %headline-3-fs;
 
-    color: $color-2;
-
-    &--bold {
-      font-weight: $fw-bold;
-    }
+    color: $text-color-dark;
   }
 
   &--4 {
     @extend %headline-4-fs;
 
     letter-spacing: 0.7px;
-    color: $color-5;
+
+    &--custom {
+      @extend %headline-4-fs-custom;
+    }
   }
 }
 
@@ -93,8 +115,20 @@
     font-size: $ipro-article-headline-1;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-article-headline-1;
+  }
+}
+
+%article-headline-1-custom-fs {
+  font-size: 4rem;
+
+  @include respond(lg) {
+    font-size: $ipro-article-headline-1;
+  }
+
+  @include respond(xs) {
+    font-size: 3rem;
   }
 }
 
@@ -105,7 +139,7 @@
     font-size: $ipro-article-headline-2;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-article-headline-2;
   }
 }
@@ -117,7 +151,7 @@
     font-size: $ipro-article-headline-3;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-article-headline-3;
   }
 }
@@ -129,7 +163,7 @@
     font-size: $ipro-article-headline-4;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-article-headline-4;
   }
 }
@@ -141,7 +175,7 @@
     font-size: $ipro-article-headline-6;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-article-headline-6;
   }
 }
@@ -150,57 +184,62 @@
     .article-headline
 ----------------- */
 .article-headline {
+  outline-color: none;
+
   &--1 {
     @extend %article-headline-1-fs;
 
-    font-family: map-get($fonts, "Primary");
-    font-weight: $fw-extra-bold;
     letter-spacing: 0.92px;
-    color: $color-3;
+
+    &-custom {
+      @extend %article-headline-1-custom-fs;
+    }
   }
 
   &--2 {
     @extend %article-headline-2-fs;
 
-    font-family: map-get($fonts, "Secondary");
-    font-weight: $fw-regular;
     letter-spacing: 0.92px;
-    color: $color-5;
   }
 
   &--3 {
     @extend %article-headline-3-fs;
 
-    font-family: map-get($fonts, "Secondary");
-    font-weight: $fw-extra-bold;
+    font-weight: $fw-bold;
     letter-spacing: 2.3px;
-    color: $color-1;
+  }
+
+  &--3-digital {
+    @extend %article-headline-3-fs;
+
+    letter-spacing: 2px;
+    color: #fff;
+    z-index: 2;
+    font-size: 2rem;
+
+    @include respond(xl) {
+      font-size: 1.5rem;
+    }
+
+    @include respond(xs) {
+      font-size: 2rem;
+    }
   }
 
   &--4 {
     @extend %article-headline-4-fs;
 
-    font-family: map-get($fonts, "Secondary");
-    font-weight: $fw-extra-bold;
     letter-spacing: 0.56px;
-    color: $color-1;
   }
 
   &--5 {
     @extend %article-headline-1-fs;
-
-    font-family: map-get($fonts, "Secondary");
-    font-weight: $fw-regular;
-    color: $color-2;
   }
 
   &--6 {
     @extend %article-headline-6-fs;
 
-    font-family: map-get($fonts, "Secondary");
-    font-weight: $fw-regular;
     letter-spacing: 0.72px;
-    color: $color-4;
   }
 }
 
@@ -214,7 +253,7 @@
     font-size: $ipro-article-paragraph-1;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-article-paragraph-1;
   }
 }
@@ -226,7 +265,7 @@
     font-size: $ipro-article-paragraph-2;
   }
 
-  @include respond(sm) {
+  @include respond(xs) {
     font-size: $mob-article-paragraph-2;
   }
 }
@@ -236,21 +275,30 @@
 ----------------- */
 
 .para {
-  font-family: map-get($fonts, "Secondary");
-  font-weight: $fw-regular;
-  color: $text-color-dark;
+  outline-color: none;
 
   &--1 {
-    letter-spacing: 0.63px;
-
     @extend %para-1-fs;
+
+    font-weight: $fw-book;
+    line-height: 1.5;
+    letter-spacing: 0.63px;
   }
 
   &--2 {
     @extend %para-2-fs;
 
-    font-weight: $fw-extra-bold;
     letter-spacing: 2.2px;
+  }
+
+  &--3 {
+    line-height: 1.5;
+    font-size: 2.5rem;
+    letter-spacing: 0;
+
+    @include respond(lg) {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -258,22 +306,55 @@
         disclaimer
 ----------------- */
 .disclaimer {
-  font-size: var(--disclaimer-text);
+  font-size: $disclaimer-text;
+  font-weight: $fw-book;
+
+  & > a {
+    color: currentColor;
+  }
 
   &-container {
-    margin-top: 20px;
+    margin-top: 4rem;
     text-align: center;
+  }
+
+  &--italic {
+    font-style: italic;
+    letter-spacing: 0.63px;
   }
 
   // disclaimer__link
   &__link {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover {
-      text-decoration: underline;
+      color: inherit;
+      text-decoration: none;
     }
+  }
+}//END disclaimer
+
+/* --------------------
+    section-article
+----------------- */
+.section-article {
+  @extend %article-not-last-margin;
+
+  & > *[class*="article-headline"] {
+    color: $color-1;
+  }
+
+  @include respond(xs) {
+    max-width: 100%;
+    text-align: center;
   }
 }
 
-//END disclaimer
+.br-mobile {
+  display: none;
+
+  @include respond(xs) {
+    display: block;
+  }
+}

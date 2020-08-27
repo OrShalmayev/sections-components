@@ -1,0 +1,33 @@
+.article--1 {
+  // article-headline
+
+  & *[class*="-ah--"] {
+    color: $color-1;
+  }
+
+  & *[class*="-ah--3"] {
+    @extend .article-headline,.article-headline--3;
+  }
+
+  & *[class*="-ah--1"] {
+    @extend %article-headline-1-fs;
+  }
+
+  & *[class*="-sub"] {
+    @extend .para,.para--1;
+
+    font-weight: $fw-bold;
+  }
+
+  & *[class*="-p--1"] {
+    @extend .para,.para--1;
+  }
+
+  & *[class*="-p--2"] {
+    @extend .para,.para--2;
+  }
+
+  & *[class*="-p--3"] {
+    @extend .para,.para--3;
+  }
+}
