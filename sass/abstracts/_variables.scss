@@ -114,15 +114,3 @@ $elm-margin-y: 2rem;
 %space-between-widgets-y {
   margin-bottom: 3rem;
 }
-
-@mixin left-line($width: 7px, $height: 50px, $bgc: $color-1) {
-  content: "";
-  position: absolute;
-  width: $width;
-  height: $height;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: $bgc;
-}
-
